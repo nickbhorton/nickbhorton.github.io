@@ -5,24 +5,29 @@
     <meta name="viewport" content="width=device-width" />
     <script src="src/mathjax-config.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
-    <title>Home</title>
+    <title>Nick's Electromagnetic Notes</title>
   </head>
   <body>
-    <h2>Faraday's Law</h2>
     <p>
-        $$\nabla \times \tv{E} = -\tv{M}_i - \frac{\partial \tv{B}}{\partial t}$$
-    </p>
-    <h2>Ampere's Law</h2>
-    <p>
-        $$\nabla \times \tv{H} = \tv{J}_i + \tv{J}_c + \frac{\partial \tv{D}}{\partial t}$$
-    </p>
-    <h2>Gauss's Law</h2>
-    <p>
-        $$\nabla \cdot \tv{D} = \t{q}_{\text{ev}}$$
-    </p>
-    <h2>Gauss's Law Magnetism</h2>
-    <p>
-        $$\nabla \cdot \tv{B} = \t{q}_{\text{mv}}$$
+        A vector field, with three spacial dimensions and one time dimension, will be expressed as a bold face script symbol.
+        $$\tv{A}=\tv{A}(x,y,z;t)$$
+        A script symbol indicates a general time dependence and the bold face indicates the quantity is a vector.
+        $$
+            \tv{A}=\t{A}_x(x,y,z;t)\uv{x}+\t{A}_y(x,y,z;t)\uv{y}+\t{A}_z(x,y,z;t)\uv{z}
+        $$
+        The small hat on top of a bold face symbol indicates a unit vector.
+        For example the unit basis vectors in the cartesian coordinate system:
+        $$
+            \uv{x}=\begin{bmatrix}1\\0\\0\end{bmatrix}\quad
+            \uv{y}=\begin{bmatrix}0\\1\\0\end{bmatrix}\quad
+            \uv{z}=\begin{bmatrix}0\\0\\1\end{bmatrix}\quad
+        $$
+        \begin{align}
+            \nabla \times \tv{E} &= -\tv{M}_i - \frac{\partial \tv{B}}{\partial t} \\
+            \nabla \times \tv{H} &= \tv{J}_i + \tv{J}_c + \frac{\partial \tv{D}}{\partial t} \\
+            \nabla \cdot \tv{D} &= \t{q}_{\text{ev}} \\
+            \nabla \cdot \tv{B} &= \t{q}_{\text{mv}}
+        \end{align}
     </p>
   </body>
 </html>

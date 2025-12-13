@@ -1,4 +1,7 @@
 window.MathJax = {
+    tex: {
+        tags: 'ams'
+    },
     startup: {
         ready() {
         MathJax.startup.defaultReady();
