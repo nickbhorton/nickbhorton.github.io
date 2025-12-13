@@ -1,0 +1,14 @@
+p{
+    max-width: 600px;
+    width: 100%;
+    font-size: 14pt;
+    margin: 0;
+}
+h2,h3 {
+    margin: 0;
+}
+.paragraph{
+    display: grid;
+    place-content: center;
+    margin: 0;
+}
