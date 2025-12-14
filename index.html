@@ -9,64 +9,6 @@
     <title>Nick's Electromagnetic Notes</title>
   </head>
   <body>
-    <div class="paragraph">
-        <h1>Maxwell's Equations Basics</h1>
-        <h3>What is a Vector Field</h3>
-        <p>
-            A vector field, with three spacial dimensions and one time dimension, will be expressed as a bold face script symbol.
-            $$\tv{A}=\tv{A}(x,y,z;t)$$
-            A script symbol indicates a general time dependence and the bold face indicates the quantity is a vector.
-            $$
-                \tv{A}=\t{A}_x(x,y,z;t)\uv{x}+\t{A}_y(x,y,z;t)\uv{y}+\t{A}_z(x,y,z;t)\uv{z}
-            $$
-            The small hat on top of a bold face symbol indicates a unit vector.
-            Which is a vector whose magnitude is one, \(|\v{r}|=1\).
-            For example the unit basis vectors in the cartesian coordinate system:
-            $$
-                \uv{x}=\begin{bmatrix}1\\0\\0\end{bmatrix}\quad
-                \uv{y}=\begin{bmatrix}0\\1\\0\end{bmatrix}\quad
-                \uv{z}=\begin{bmatrix}0\\0\\1\end{bmatrix}\quad
-            $$
-        </p>
-        <h3>Quantities and Units</h3>
-        <ul>
-            <li>The electric field intensity \(\tv{E}\), \(\frac{\text{V}}{\text{m}}\)</li>
-            <li>The magnetic field intensity \(\tv{H}\), \(\frac{\text{A}}{\text{m}}\)</li>
-            <li>The electric flux intensity \(\tv{D}\), \(\frac{\text{C}}{\text{m}^2}\)</li>
-            <li>The magnetic flux intensity \(\tv{B}\), \(\frac{\text{Wb}}{\text{m}^2}\)</li>
-            <li>The source (impressed) electric current density \(\tv{J}_i\), \(\frac{\text{A}}{\text{m}^2}\)</li>
-            <li>The electric conduction current density \(\tv{J}_c\), \(\frac{\text{A}}{\text{m}^2}\)</li>
-            <li>The source (impressed) magnetic current density \(\tv{M}_i\), \(\frac{\text{V}}{\text{m}^2}\)</li>
-            <li>The electric charge density \(\t{q}_{\text{ev}}\), \(\frac{\text{C}}{\text{m}^3}\)</li>
-            <li>The magnetic charge density \(\t{q}_{\text{mv}}\), \(\frac{\text{Wb}}{\text{m}^3}\)</li>
-        </ul>
-        <h3>Time dependent Maxwell's Equations</h3>
-        <p>
-            Maxwells equations takes the quantities from above and relates them via a set of first order, coupled partial differential equations.
-            \begin{align}
-                \nabla \times \tv{E} &= -\tv{M}_i - \frac{\partial \tv{B}}{\partial t} \\
-                \nabla \times \tv{H} &= \tv{J}_i + \tv{J}_c + \frac{\partial \tv{D}}{\partial t} \\
-                \nabla \cdot \tv{D} &= \t{q}_{\text{ev}} \\
-                \nabla \cdot \tv{B} &= \t{q}_{\text{mv}}
-            \end{align}
-        </p>
-        <h3>Time harmonic Maxwell's Equations</h3>
-        <p>
-            The general time dependent Maxwell's equations are often needlessly complex. 
-            General periodic time dependence can be constructed with the Fourier transform.
-            So instead electromagnetic quantities are expressed in a purely spacial dependent form.
-            Where 
-            \begin{equation}
-            \tv{E}=\text{Re}\left[\v{E}(x,y,z)e^{j\omega t}\right]
-            \end{equation}
-            This simplification leads to the time harmonic Maxwell's equations
-            \begin{align}
-                \nabla \times \v{E} &= -\v{M}_i - j \omega \v{B} \\
-                \nabla \times \v{H} &= \v{J}_i + \v{J}_c + j \omega \v{D} \\
-                \nabla \cdot \v{D} &= q_{\text{ev}} \\
-                \nabla \cdot \v{B} &= q_{\text{mv}}
-            \end{align}
-        </p>
-    </div>
+    <a href="pages/basic_maxwells.html">Basic Maxwell's 12/13/2025</a>
   </body>
 </html>

@@ -1,7 +1,7 @@
 p{
     max-width: 600px;
     width: 100%;
-    font-size: 14pt;
+    font-size: 12pt;
     margin: 0;
 }
 h2,h3 {
@@ -11,4 +11,12 @@ h2,h3 {
     display: grid;
     place-content: center;
     margin: 0;
+}
+a:link, a:visited{
+    text-decoration: none;
+    color: blue;
+}
+a:hover, a:active{
+    text-decoration: none;
+    color: lightblue;
 }
