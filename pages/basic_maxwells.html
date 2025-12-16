@@ -14,15 +14,24 @@
         <h1>Maxwell's Equations Basics</h1>
         <h3>What is a Vector Field</h3>
         <p>
-            A vector field, with three spacial dimensions and one time dimension, will be expressed as a bold face script symbol.
+            Scalars describe the magnitude of a phenomena, while vectors describe both magnitude and direction.
+            Vector fields are functions that assign a vector to every point \((x,y,z)\) in a region of space.
+            These articles will use a bold face symbol to represent vectors and vector fields.
+            Electromagnetic problems and derivations are separated into two temporal classifications, arbitrary time and harmonic time dependence.
+            Arbitrary time dependence means any time dependence.
+            For example if a switch is closed at time \(t\), the time dependence of the voltage would be a step function.
+            Arbitrary time dependant quantities will be represented with script symbols \(\t{X}\).
+            For examples a arbitrary time dependant vector field would be written as
             $$\tv{A}=\tv{A}(x,y,z;t)$$
-            A script symbol indicates a general time dependence and the bold face indicates the quantity is a vector.
+            Vectors are defined as the abstract combination of a magnitude and a direction.
+            However, when using a coordinate system, they can be written in component form \(\v{v}=v_x\uv{x}+v_y\uv{y}+v_z\uv{z}\).
+            In a similar vein, vector fields can be written in component form
             $$
                 \tv{A}=\t{A}_x(x,y,z;t)\uv{x}+\t{A}_y(x,y,z;t)\uv{y}+\t{A}_z(x,y,z;t)\uv{z}
             $$
-            The small hat on top of a bold face symbol indicates a unit vector.
-            Which is a vector whose magnitude is one, \(|\v{r}|=1\).
-            For example the unit basis vectors in the cartesian coordinate system:
+            Where \(A_x,A_y\) and \(A_z\) are scalar functions.
+            A vector with a hat indicates it is a unit vector, \(|\v{r}|=1\).
+            For example the unit vectors of the cartesian coordinate system are written as
             $$
                 \uv{x}=\begin{bmatrix}1\\0\\0\end{bmatrix}\quad
                 \uv{y}=\begin{bmatrix}0\\1\\0\end{bmatrix}\quad
