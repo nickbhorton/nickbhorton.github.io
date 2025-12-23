@@ -15,22 +15,26 @@
         <h3>What is a Vector Field</h3>
         <p>
             Scalars describe the magnitude of a phenomena, while vectors describe both magnitude and direction.
-            Vector fields are functions that assign a vector to every point \((x,y,z)\) in a region of space.
-            These articles will use a bold face symbol to represent vectors and vector fields.
-            Electromagnetic problems and derivations are separated into two temporal classifications, arbitrary time and harmonic time dependence.
-            Arbitrary time dependence means any time dependence.
-            For example if a switch is closed at time \(t\), the time dependence of the voltage would be a step function.
-            Arbitrary time dependant quantities will be represented with script symbols \(\t{X}\).
-            For examples a arbitrary time dependant vector field would be written as
-            $$\tv{A}=\tv{A}(x,y,z;t)$$
-            Vectors are defined as the abstract combination of a magnitude and a direction.
-            However, when using a coordinate system, they can be written in component form \(\v{v}=v_x\uv{x}+v_y\uv{y}+v_z\uv{z}\).
-            In a similar vein, vector fields can be written in component form
-            $$
+            Vector fields are functions that assign a vector to every point \((x,y,z)\) in space.
+            A bold face symbol will indicates a vector or vector field.
+            Electromagnetic problems are separated into two temporal categories, arbitrary time and harmonic time.
+            Real life usually adheres to arbitrary time dependence.
+            For example if a switch in a circuit is closed at time \(t\), the time dependence of the voltage would be a step function.
+            Arbitrary time dependant quantities will be represented with script symbols \(\t{A}\).
+            Combining time and vector notations, an arbitrary time dependant vector field is written like 
+            \begin{equation*}
+                \tv{A}=\tv{A}(x,y,z;t)
+            \end{equation*}
+            It is important to keep in mind that vectors are abstractly defined as the combination of magnitude and direction. 
+            However, they are commonly described in terms of a coordinate system.
+            In Cartesian coordinates, a general vector \(\v{v}\) is projected onto the Cartesian unit vectors \(\v{v}=v_x\uv{x}+v_y\uv{y}+v_z\uv{z}\).
+            Where \(v_x,v_y,v_z\) are the vector components.
+            Vector fields can also be written in component form
+            \begin{equation*}
                 \tv{A}=\t{A}_x(x,y,z;t)\uv{x}+\t{A}_y(x,y,z;t)\uv{y}+\t{A}_z(x,y,z;t)\uv{z}
-            $$
-            Where \(A_x,A_y\) and \(A_z\) are scalar functions.
-            A vector with a hat indicates it is a unit vector, \(|\v{r}|=1\).
+            \end{equation*}
+            Where \(A_x,A_y\) and \(A_z\) are component functions of space and time instead of numbers like in the single vector case.
+            A vector with a hat indicates it is a unit vector \(\uv{v}\).
             For example the unit vectors of the cartesian coordinate system are written as
             $$
                 \uv{x}=\begin{bmatrix}1\\0\\0\end{bmatrix}\quad
