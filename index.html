@@ -4,14 +4,47 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="styles.css">
+    <script src="../src/mathjax-config.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <title>Nick's Electromagnetic Notes</title>
   </head>
   <body>
-    <ul>
-        <li>
-        <a href="pages/basic_maxwells.html">Maxwell's Equations 12/13/2025</a>:
-        Started 12/13/2025, Updated 12/16/2025.
-        </li>
-    </ul>
+    \begin{equation}
+      \gamma = \alpha + j \beta
+    \end{equation}
+    \begin{equation}
+      \nabla \times \v{e}_t = -j \omega \mu \v{h}_t \uv{z}
+    \end{equation}
+    \begin{equation}
+      \gamma \v{e}_t + \nabla e_z = -j \omega \mu \uv{z} \times \v{h}_t
+    \end{equation}
+    \begin{equation}
+      \nabla \times \v{h}_t = j \omega \epsilon e_z \uv{z}
+    \end{equation}
+    \begin{equation}
+      \gamma \v{h}_t + \nabla h_z = j\omega \epsilon \uv{z} \times \v{e}_t
+    \end{equation}
+    \begin{equation}
+      \epsilon \nabla \cdot \v{e}_t + \v{e}_t \cdot \nabla \epsilon = \epsilon \gamma e_z
+    \end{equation}
+    \begin{equation}
+      \mu \nabla \cdot \v{h}_t + \v{h}_t \cdot \nabla \mu = \mu \gamma h_z
+    \end{equation}
+    \begin{equation}
+      ( \omega ^2 \mu \epsilon + \gamma ^2 ) \v{e}_t = 
+      -\gamma \nabla e_z + j\omega \mu \uv{z} \times \nabla h_z
+    \end{equation}
+    \begin{equation}
+      ( \omega ^2 \mu \epsilon + \gamma ^2 ) \v{h}_t = 
+      -\gamma \nabla h_z + j\omega \mu \uv{z} \times \nabla e_z
+    \end{equation}
+    \begin{equation}
+      ( \nabla ^2 + \omega ^2 \mu \epsilon + \gamma ^2 ) e_z =
+      \frac{\gamma}{\epsilon} \v{e}_t \cdot \nabla \epsilon
+    \end{equation}
+    \begin{equation}
+      ( \nabla ^2 + \omega ^2 \mu \epsilon + \gamma ^2 ) h_z =
+      \frac{\gamma}{\epsilon} \v{h}_t \cdot \nabla \mu
+    \end{equation}
   </body>
 </html>
