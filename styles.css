@@ -1,3 +1,6 @@
+.MathJax{
+    font-size: 150%;
+}
 p{
     max-width: 600px;
     width: 100%;
@@ -6,6 +9,12 @@ p{
 }
 h2,h3 {
     margin: 0;
+}
+h4 {
+    margin-top: 0.5em;
+    margin-bottom: 0em;
+    font-weight: 600;
+    font-style: oblique;
 }
 .paragraph{
     display: grid;
