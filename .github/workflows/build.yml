@@ -21,7 +21,7 @@ jobs:
         run: npm install mathjax-full
 
       - name: Run MathJax Render
-        run: node render-math.js
+        run: node render_math.js
 
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
