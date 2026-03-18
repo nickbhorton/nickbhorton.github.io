@@ -27,7 +27,7 @@ jobs:
 
       - name: Render Math to SVG
         # This runs the script we created earlier
-        run: node render-math.js
+        run: node render_math.js
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
