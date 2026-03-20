@@ -22,11 +22,11 @@ jobs:
       - name: Install Tailwind 
         run: npm install -D tailwindcss@3
 
-      - name: Render Equations to SVGs
-        run: node tex_to_svg.mjs
-
       - name: Write Tailwind Styles
         run: npx tailwindcss -i ./src/styles.css -o ./dist/styles.css
+
+      - name: Render Equations to SVGs
+        run: node tex_to_svg.mjs
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
