@@ -17,10 +17,7 @@ jobs:
           node-version: '20'
 
       - name: Install Dependencies
-        run: npm install mathjax-full jsdom cheerio
-
-      - name: Install Tailwind 
-        run: npm install -D tailwindcss@3
+        run: npm install mathjax-full jsdom cheerio tailwindcss@3
 
       - name: Write Tailwind Styles
         run: npx tailwindcss -i ./src/styles.css -o ./dist/styles.css
