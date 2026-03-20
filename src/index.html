@@ -5,12 +5,28 @@
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="styles.css">
     <title>Nick's Electromagnetic Notes</title>
+    <style>
+      .color_a {
+        fill: blue !important;
+      }
+      .color_b {
+        fill: red !important;
+      }
+    </style>
   </head>
   <body>
-    <p>
-      Out of line equation
-      $$ \gamma = \alpha + j \beta $$
-      In line equation $y=mx+b$
-    </p>
+      <h1 class="font-bold">
+        Maxwell's Equations
+      </h1>
+      <code class="tex">
+        \begin{align}
+          \nabla \times \ca{\v{H}} &= \cb{\v{J}}_f + \frac{\partial \ca{\v{D}}}{\partial t} \\
+          \nabla \times \ca{\v{E}} &= - \frac{\partial \ca{\v{B}}}{\partial t} \\
+          \nabla \cdot \ca{\v{D}} &= \cb{\rho}_f
+          \vphantom{\frac{\partial \v{D}}{\partial t}}\\
+          \nabla \cdot \ca{\v{B}} &= 0 
+          \vphantom{\frac{\partial \v{D}}{\partial t}}
+        \end{align}
+      </code>
   </body>
 </html>

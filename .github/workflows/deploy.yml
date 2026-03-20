@@ -22,11 +22,16 @@ jobs:
           node-version: '20'
 
       - name: Install Dependencies
-        run: npm install mathjax-full
+        run: npm install mathjax-full jsdom cheerio
 
-      - name: Render Math to SVG
-        # This runs the script we created earlier
-        run: node render_math.js
+      - name: Install Tailwind 
+        run: npm install -D tailwindcss@3
+
+      - name: Render Equations to SVGs
+        run: node tex_to_svg.mjs
+
+      - name: Write Tailwind Styles
+        run: npx tailwindcss -i ./src/styles.css -o ./dist/styles.css
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
