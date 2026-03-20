@@ -4,13 +4,8 @@ on:
   push:
     branches: ["main"] # Or your default branch name
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -41,7 +36,14 @@ jobs:
         with:
           # This points to the folder where your rendered HTML is saved
           path: './dist' 
-
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+    runs-on: ubuntu-latest
+    steps:
       - name: Deploy to GitHub Pages
-        id: deployment
         uses: actions/deploy-pages@v4
