@@ -37,6 +37,7 @@ const dist_directory = "./dist"
 
 export function convert_html_equations() {
     const tex_equation_strings = []
+    const inline_tex_equation_strings = []
     try {
         const files = readdirSync(source_directory);
         const html_files = files.filter(file => extname(file) == ".html");
@@ -53,7 +54,7 @@ export function convert_html_equations() {
             $('code.tex').each((index, element) => {
                 const tex_equation_string = $(element).html().trim().split('\n').map(line => line.trim()).join('').replace(/&amp;/g, "&")
                 tex_equation_strings.push(tex_equation_string);
-                const svg = tex_to_svg(tex_equation_string)
+                const svg = tex_to_svg(tex_equation_string, true)
                 const svg_cheerio = cheerio.load(svg)
 
                 // add classes from code element to svg
@@ -61,7 +62,29 @@ export function convert_html_equations() {
                 svg_cheerio("svg").addClass(class_names)
 
                 // scale svg
-                const scale = 2.0
+                const scale = 1.0
+                const width = parseFloat(svg_cheerio("svg").attr('width'))
+                const height = parseFloat(svg_cheerio("svg").attr('height'))
+                svg_cheerio("svg").attr('width', (width * scale).toString() + "ex")
+                svg_cheerio("svg").attr('height', (height * scale).toString() + "ex")
+                
+                // replace code tag with svg
+                $(element).replaceWith(svg_cheerio.html())
+            });
+            // replace inline tex with inline svg
+            $('code.tex-inline').each((index, element) => {
+                const tex_equation_string = $(element).html().trim().split('\n').map(line => line.trim()).join('').replace(/&amp;/g, "&")
+                inline_tex_equation_strings.push(tex_equation_string);
+                const svg = tex_to_svg(tex_equation_string, false)
+                const svg_cheerio = cheerio.load(svg)
+
+                // add classes from code element to svg
+                const class_names = $(element).attr("class")
+                svg_cheerio("svg").addClass(class_names)
+                svg_cheerio("svg").addClass("inline-block")
+
+                // scale svg
+                const scale = 1.0
                 const width = parseFloat(svg_cheerio("svg").attr('width'))
                 const height = parseFloat(svg_cheerio("svg").attr('height'))
                 svg_cheerio("svg").attr('width', (width * scale).toString() + "ex")
@@ -78,7 +101,7 @@ export function convert_html_equations() {
     catch (err) {
         console.error(err)
     }
-    return tex_equation_strings
+    return {"tex": tex_equation_strings, "tex_inline": inline_tex_equation_strings}
 }
 
 console.log(convert_html_equations())

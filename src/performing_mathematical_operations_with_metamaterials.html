@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="styles.css">
+    <title>nbh</title>
+    <style>
+      .color_a {
+        fill: red !important;
+      }
+      .color_b {
+        fill: blue !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex flex-col m-4">
+      <h1 class="text-xl font-bold">Notation</h1>
+      <p>
+        These problems are two dimensional where
+        <code class="tex-inline">x</code>
+        is the direction of propagation and
+        <code class="tex-inline">y</code>
+        is the direction where the function is described
+        <code class="tex-inline">f(y)</code>.
+        So the problem should be viewed as invariant in
+        <code class="tex-inline">z</code>
+      </p>
+      <h1 class="text-xl font-bold">Computational Metamaterials</h1>
+      <p>
+        Computational metamaterials are engineered materials that perform computations on the waveforms that propagate through them.
+        Specifically computations like differentiation and integration.
+      </p>
+      <h2 class="text-lg font-bold">Metasurface Approach</h2>
+      <p>
+        This approach to realizing a computational metamaterial requires material blocks that apply a fourier transform to the incoming waveform.
+        It is possible to construct this in the forward direction, from spacial domain to frequency domain. 
+        However, the reverse direction requires negative permittivity/permeability materials which are much less practical.
+      </p>
+      <h2 class="text-lg font-bold">Greens Function Approach</h2>
+      <p>
+        This approach uses a series of metamaterial slabs to apply the computation.
+        <code class="tex-inline">n</code> number of slabs, each with there own thickness <code class="tex-inline">t</code>,
+        permittivity <code class="tex-inline">\epsilon</code>, and permeability <code class="tex-inline">\mu</code>, 
+        are optimized to create a transmission coefficient that depends on 
+        <code class="tex-inline">k_y</code>.
+        The optimization function is shown below.
+      </p>
+      <div class="flex justify-center items-center">
+        <div class="flex justify-end items-center w-1/2 m-4">
+          <code class="tex">
+            \text{err} = \sum_{i=1}^M 
+            w_r
+            \left(
+              \text{Re}\left[\ca{\tilde{G}}(k_{y,i}) - 
+              \cb{\tilde{T}}(k_{y,i})\right]
+            \right)^2
+            +
+            w_i
+            \left(
+              \text{Im}\left[\ca{\tilde{G}}(k_{y,i}) - 
+              \cb{\tilde{T}}(k_{y,i})\right]
+            \right)^2
+          </code>
+        </div>
+        <div class="flex flex-col justify-start w-1/2 m-4">
+          <code class="tex">
+            \ca{\tilde{G}}(k_{y,i}): \text{Spatial fourier transform greens function}
+          </code>
+          <code class="tex">
+            \cb{\tilde{T}}(k_{y,i}): \text{Spatial fourier transform transmission coefficient}
+          </code>
+          <code class="tex">
+            w_r: \text{Real weight coefficient}
+            \phantom{\tilde{G}(k_{y,i})}
+          </code>
+          <code class="tex">
+            w_r: \text{Imag weight coefficient}
+            \phantom{\tilde{G}(k_{y,i})}
+          </code>
+          <code class="tex">
+            i: \text{Slab index}
+            \phantom{\tilde{G}(k_{y,i})}
+          </code>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

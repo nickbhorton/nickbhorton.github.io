@@ -19,11 +19,14 @@ jobs:
       - name: Install Dependencies
         run: npm install mathjax-full jsdom cheerio tailwindcss@3
 
-      - name: Write Tailwind Styles
-        run: npx tailwindcss -i ./src/styles.css -o ./dist/styles.css
+      - name: Create Distribution Directory
+        run: mkdir dist
 
       - name: Render Equations to SVGs
         run: node tex_to_svg.mjs
+
+      - name: Write Tailwind Styles
+        run: npx tailwindcss -i ./src/styles.css -o ./dist/styles.css
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
