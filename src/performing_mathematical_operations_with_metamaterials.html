@@ -48,7 +48,7 @@
         The optimization function is shown below.
       </p>
       <div class="flex flex-col md:flex-row justify-center items-center">
-        <div class="flex justify-center md:justify-end items-center w-full md:w-1/2 md:m-4 my-4">
+        <div class="flex justify-center md:justify-end items-center w-full md:w-1/2 md:m-4 mt-4">
           <code class="tex">
             \text{err} = \sum_{i=1}^M 
             w_r
@@ -64,12 +64,15 @@
             \right)^2
           </code>
         </div>
-        <div class="flex flex-col justify-center md:justify-start w-full md:w-1/2 md:m-4 my-4">
+        <div class="flex flex-col justify-center md:justify-start w-full md:w-1/2 md:m-4 mb-4">
           <code class="tex">
-            \ca{\tilde{G}}(k_{y,i}): \text{Spatial fourier transform greens function}
+            \tilde{A}: \text{Spacial Fourier transform of } A
           </code>
           <code class="tex">
-            \cb{\tilde{T}}(k_{y,i}): \text{Spatial fourier transform transmission coefficient}
+            \ca{\tilde{G}}(k_{y,i}): \text{Greens function}
+          </code>
+          <code class="tex">
+            \cb{\tilde{T}}(k_{y,i}): \text{Transmission coefficient}
           </code>
           <code class="tex">
             w_r: \text{Real weight coefficient}
