@@ -12,25 +12,22 @@
       .color_b {
         fill: blue !important;
       }
+      .color_c {
+        fill: purple !important;
+      }
+      .color_d {
+        fill: darkgreen !important;
+      }
     </style>
   </head>
   <body>
     <div class="flex flex-col m-4">
-      <h1 class="text-xl font-bold">Notation</h1>
-      <p>
-        These problems are two dimensional where
-        <code class="tex-inline">x</code>
-        is the direction of propagation and
-        <code class="tex-inline">y</code>
-        is the direction where the function is described
-        <code class="tex-inline">f(y)</code>.
-        So the problem should be viewed as invariant in
-        <code class="tex-inline">z</code>
-      </p>
       <h1 class="text-xl font-bold">Computational Metamaterials</h1>
       <p>
-        Computational metamaterials are engineered materials that perform computations on the waveforms that propagate through them.
-        Specifically computations like differentiation and integration.
+        Computational metamaterials are engineered materials that perform computations, like integration or differentiation, on waveforms propagating through them.
+        Analog computing devices have been implemented previously, but they are usually too large to be practical.
+        However, by utilizing metamaterial concepts, material properties can be precisely controlled, enabling the miniaturization of analog computing components.
+        These notes on computational metamaterials come primarily from [1]
       </p>
       <h2 class="text-lg font-bold">Metasurface Approach</h2>
       <p>
@@ -40,7 +37,9 @@
       </p>
       <h2 class="text-lg font-bold">Greens Function Approach</h2>
       <p>
-        This approach uses a series of metamaterial slabs to apply the computation.
+        Consider a set of TM plane waves propagating at an angle tangential to the
+        <code class="tex-inline">xy</code> plane, where the experienced boundary conditions are invariant in the
+        <code class="tex-inline">yz</code> plane.
         <code class="tex-inline">n</code> number of slabs, each with there own thickness <code class="tex-inline">t</code>,
         permittivity <code class="tex-inline">\epsilon</code>, and permeability <code class="tex-inline">\mu</code>, 
         are optimized to create a transmission coefficient that depends on 
@@ -88,6 +87,85 @@
           </code>
         </div>
       </div>
+      <h1 class="text-xl font-bold">Greens Functions, Math Operator and Spacial Fourier Transform</h1>
+      <p>
+        To apply the mathematical operator, properties of Greens function convolution and the spacial Fourier transform are used.
+        If you take the convolution between the Green's function associated with the math operator and the input function,
+        the resulting function should be the input function with the operator applied.
+      </p>
+      <div class="flex flex-col md:flex-row justify-center items-center">
+        <div class="flex justify-center md:justify-end items-center w-full md:w-1/2 md:m-4 mt-4">
+          <code class="tex">
+            \cd{g}(y)=\int_{-\infty}^\infty \cc{f}(u)\ca{G}(y-u)\,du
+          </code>
+        </div>
+        <div class="flex flex-col justify-center md:justify-start w-full md:w-1/2 md:m-4 mb-4">
+          <code class="tex">
+            \cc{f}(y): \text{Input Function}
+            \phantom{\tilde{G}(k_{y,i})}
+          </code>
+          <code class="tex">
+            \cd{g}(y): \text{Output Function}
+            \phantom{\tilde{G}(k_{y,i})}
+          </code>
+          <code class="tex">
+            \ca{G}(y): \text{Greens function}
+            \phantom{\tilde{G}(k_{y,i})}
+          </code>
+        </div>
+      </div>
+      <p>
+        Using a convolution in this way is beneficial because when this problem is taken into k space, it becomes multiplication instead of integration.
+      </p>
+      <div class="flex flex-col md:flex-row justify-center items-center">
+        <div class="flex justify-center md:justify-end items-center w-full md:w-1/2 md:m-4 mt-4">
+          <code class="tex">
+            \cd{\tilde{g}}(k_y)= \ca{\tilde{G}}(k_y)\cc{\tilde{f}}(k_y)
+          </code>
+        </div>
+        <div class="flex flex-col justify-center md:justify-start w-full md:w-1/2 md:m-4 mb-4">
+          <code class="tex">
+            \tilde{A}: \text{Spacial Fourier transform of } A
+            \phantom{\tilde{G}(k_{y,i})}
+          </code>
+          <code class="tex">
+            \cc{\tilde{f}}(y): \text{Input Function}
+            \phantom{\tilde{G}(k_{y,i})}
+          </code>
+          <code class="tex">
+            \cd{\tilde{g}}(y): \text{Output Function}
+            \phantom{\tilde{G}(k_{y,i})}
+          </code>
+          <code class="tex">
+            \ca{\tilde{G}}(y): \text{Greens function}
+            \phantom{\tilde{G}(k_{y,i})}
+          </code>
+        </div>
+      </div>
+      <p>
+        Below is the equation to take the spacial Fourier transform from <code class="tex-inline">y</code> to
+        <code class="tex-inline">k_y</code>
+      </p>
+      <div class="flex flex-col md:flex-row justify-center items-center">
+        <div class="flex justify-center md:justify-end items-center w-full md:w-1/2 md:m-4 mt-4">
+          <code class="tex">
+            \cc{\tilde{f}}(k_y)=\int_{-\infty}^\infty \cc{f}(y)e^{-jk_y y}\,dy
+          </code>
+        </div>
+        <div class="flex flex-col justify-center md:justify-start w-full md:w-1/2 md:m-4 mb-4">
+          <code class="tex">
+            \tilde{A}: \text{Spacial Fourier transform of } A
+            \phantom{\tilde{G}(k_{y,i})}
+          </code>
+          <code class="tex">
+            \cc{\tilde{f}}(y): \text{Input Function}
+            \phantom{\tilde{G}(k_{y,i})}
+          </code>
+        </div>
+      </div>
+      <p>
+        [1] Alexandre Silva et al., Performing Mathematical Operations with Metamaterials. Science 343, 160-163(2014). DOI:10.1126/science.1242818
+      </p>
     </div>
   </body>
 </html>
